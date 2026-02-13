@@ -34,11 +34,11 @@ Download the latest version directly from Releases:
 ---
 
 ## 🔧 Installation (Manual)
-
-1. Go to `chrome://extensions`
-2. Enable Developer Mode
-3. Click "Load Unpacked"
-4. Select the project folder
+1. Unzip the archive
+2. Go to `chrome://extensions`
+3. Enable Developer Mode
+4. Click "Load Unpacked"
+5. Select the project folder
 
 ---
 

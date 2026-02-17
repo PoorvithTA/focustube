@@ -206,10 +206,14 @@
 
     <br><br>
 
-    © <script>document.write(new Date().getFullYear())</script> Poorvith T A • 
+    © <span id="year"></span> Poorvith T A • 
     <a href="https://ig.me/m/i_am_poorvith" target="_blank">Contact Me</a>
   </footer>
-
+<script>
+  const yearSpan = document.getElementById("year");
+  const currentYear = new Date().getFullYear();
+  yearSpan.textContent = currentYear;
+</script>
   <script>
 async function fetchLatestRelease() {
   const versionText = document.getElementById("versionText");

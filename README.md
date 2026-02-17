@@ -59,7 +59,7 @@ FocusTube removes the noise so you can:
 ## 👨‍💻 Developer
 
 Made with 💓 & Care by  
-**Poorvith T.A**
+**Poorvith T A**
 
 - YouTube: https://youtube.com/@PoorvithsLife_Official
 - GitHub: https://github.com/PoorvithTA
@@ -72,4 +72,4 @@ MIT License
 
 ---
 
-© 2026 Poorvith T.A
+© 2026 Poorvith T A

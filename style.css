@@ -1,0 +1,275 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 320px;
+  font-family: 'Google Sans', sans-serif;
+  background: #0f1117;
+  color: #e8eaf0;
+}
+
+.app {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── HEADER ── */
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 4px;
+}
+
+.logo-icon {
+  font-size: 32px;
+  color: #ff2020;
+}
+
+h1 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+}
+
+header p {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 2px;
+}
+
+/* ── CARD ── */
+.card {
+  background: #1a1d27;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 10px;
+}
+
+/* ── TOGGLE CARD ── */
+.row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row-gap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.row-icon {
+  font-size: 18px;
+  color: rgba(255,255,255,0.4);
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 6px;
+  transition: color 0.2s;
+}
+
+.status-text.on { color: #ff4040; }
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  width: 42px;
+  height: 24px;
+}
+.switch input { display: none; }
+
+.slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.12);
+  cursor: pointer;
+  transition: background 0.25s;
+}
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  top: 3px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.25s;
+}
+input:checked + .slider { background: #ff2020; }
+input:checked + .slider::before { transform: translateX(18px); }
+
+/* ── SEGMENTED ── */
+.segmented {
+  display: flex;
+  background: rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 3px;
+}
+
+.seg-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Google Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.seg-btn.active {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+}
+
+.mode-hint {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* ── FILTERS GRID ── */
+.filters-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.filter-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 12px 8px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.filter-btn:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* Slashed state = hidden/blocked */
+.filter-btn.slashed {
+  background: rgba(255, 32, 32, 0.08);
+  border-color: rgba(255, 32, 32, 0.3);
+}
+
+.icon-wrap {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-icon {
+  font-size: 20px;
+  color: rgba(255,255,255,0.35);
+  transition: color 0.2s;
+  display: block;
+}
+
+.filter-btn.slashed .filter-icon {
+  color: #ff4040;
+}
+
+/* The diagonal slash line */
+.slash {
+  display: none;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.slash::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 130%;
+  background: #ff2020;
+  border-radius: 2px;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Outer circle around slash */
+.slash::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1.5px solid #ff2020;
+}
+
+.filter-btn.slashed .slash {
+  display: block;
+}
+
+.filter-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s;
+}
+
+.filter-btn.slashed .filter-label {
+  color: #ff5555;
+}
+
+.filter-hint {
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  text-align: center;
+}
+
+/* ── FOOTER ── */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  padding: 2px 2px 0;
+}
+
+footer a {
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+}
+
+footer a:hover { color: #ff4040; }
+
+footer .bi-github { vertical-align: -1px; margin-right: 3px; }

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "FocusTube",
-  "version": "1.2",
+  "version": "1.3",
   "description": "Distraction-free YouTube. Hide feed, Shorts, comments, and recommendations to stay focused.",
   "permissions": ["storage"],
   "host_permissions": ["https://www.youtube.com/*"],
@@ -41,3 +41,4 @@
     }
   ]
 }
+
